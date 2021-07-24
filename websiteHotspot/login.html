@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login Portal</title>
+<link href="login.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<div id="main">
+        <br />
+    	<center>
+        	<b class="text" >SILAHKAN LOGIN</b><br />
+            <b class="htext" >GUNAKAN NIM UNTUK MENGAKSES</b>
+        </center>
+        <br />
+    	<div id="login">
+        	
+<!--starmik-->
+ $(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+<div align="center" class="notice" style="color: #c1c1c1; font-size: 9px"><br />
+</div><br />
+
+<form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+					<input type="hidden" name="dst" value="$(link-orig)" />
+					<input type="hidden" name="popup" value="true" />
+					<div id="form-login">
+					<div id="form-field-wrap">
+					
+                    <input type="text" class="user" id="username-login" name="username" placeholder="Username"><br /><br />
+					<input type="password" class="user"  id="pass-login" name="password" placeholder="Password"><br /><br />
+					<input type="hidden" id="tsel" name="tsel" value="8">
+					</div>
+                    
+					<input type="submit" value="LOGIN" class="btn-login" />
+                    
+					</div>
+<!--end mik-->                    
+<div style="color: #c1c1c1; font-size: 8px"></div>
+<center>$(if error)<br /><div style="color: #FF8080; font-size: 8px">$(error)</div>$(endif)</center>
+
+
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+
+
+</form>
+<!--endmik-->
+          
+            
+        </div>
+        <br />
+        <center>
+        	<b class="copy" >2020 &copy; Teknik Komputer</b>
+        </center>
+    </div>
+
+</body>
+</html>
